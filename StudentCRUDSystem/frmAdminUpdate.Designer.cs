@@ -51,7 +51,7 @@ namespace StudentCRUDSystem
             this.lblPhone = new System.Windows.Forms.Label();
             this.txtUpName = new System.Windows.Forms.TextBox();
             this.lblStudName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblBack = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -160,6 +160,7 @@ namespace StudentCRUDSystem
             this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtUpHindi
             // 
@@ -275,27 +276,32 @@ namespace StudentCRUDSystem
             this.lblStudName.TabIndex = 0;
             this.lblStudName.Text = "Name";
             // 
-            // label1
+            // lblBack
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(737, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Back..";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblBack.AutoSize = true;
+            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblBack.Location = new System.Drawing.Point(1300, 9);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Padding = new System.Windows.Forms.Padding(2);
+            this.lblBack.Size = new System.Drawing.Size(55, 20);
+            this.lblBack.TabIndex = 2;
+            this.lblBack.Text = "Back..";
+            this.lblBack.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblBack.Click += new System.EventHandler(this.label1_Click);
             // 
             // frmAdminUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1071, 450);
+            this.Controls.Add(this.lblBack);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdminUpdate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADMIN-UPDATE";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -329,6 +335,6 @@ namespace StudentCRUDSystem
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.TextBox txtUpStatus;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBack;
     }
 }

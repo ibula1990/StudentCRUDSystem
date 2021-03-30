@@ -30,17 +30,16 @@ namespace StudentCRUDSystem
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnStatusChange = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnStudReg = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnStatusChange);
             this.panel1.Controls.Add(this.btnList);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnStudReg);
@@ -49,22 +48,11 @@ namespace StudentCRUDSystem
             this.panel1.Size = new System.Drawing.Size(247, 352);
             this.panel1.TabIndex = 0;
             // 
-            // btnStatusChange
-            // 
-            this.btnStatusChange.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnStatusChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatusChange.Location = new System.Drawing.Point(12, 276);
-            this.btnStatusChange.Name = "btnStatusChange";
-            this.btnStatusChange.Size = new System.Drawing.Size(223, 42);
-            this.btnStatusChange.TabIndex = 4;
-            this.btnStatusChange.Text = "Status Change";
-            this.btnStatusChange.UseVisualStyleBackColor = false;
-            // 
             // btnList
             // 
             this.btnList.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnList.Location = new System.Drawing.Point(12, 195);
+            this.btnList.Location = new System.Drawing.Point(12, 264);
             this.btnList.Name = "btnList";
             this.btnList.Size = new System.Drawing.Size(223, 42);
             this.btnList.TabIndex = 3;
@@ -76,7 +64,7 @@ namespace StudentCRUDSystem
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(12, 113);
+            this.btnUpdate.Location = new System.Drawing.Point(12, 161);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(223, 42);
             this.btnUpdate.TabIndex = 1;
@@ -88,7 +76,7 @@ namespace StudentCRUDSystem
             // 
             this.btnStudReg.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnStudReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudReg.Location = new System.Drawing.Point(9, 28);
+            this.btnStudReg.Location = new System.Drawing.Point(12, 58);
             this.btnStudReg.Name = "btnStudReg";
             this.btnStudReg.Size = new System.Drawing.Size(223, 42);
             this.btnStudReg.TabIndex = 0;
@@ -106,11 +94,26 @@ namespace StudentCRUDSystem
             this.label2.TabIndex = 3;
             this.label2.Text = "Admin Menu";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.Location = new System.Drawing.Point(1320, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "X";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmAdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -127,10 +130,10 @@ namespace StudentCRUDSystem
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnStatusChange;
         private System.Windows.Forms.Button btnList;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnStudReg;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

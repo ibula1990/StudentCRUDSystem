@@ -26,25 +26,28 @@ namespace StudentCRUDSystem
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "UpdateStudent";
-            cmd.Parameters.AddWithValue("@Id", txtUpId.Text);
+            cmd.Parameters.AddWithValue("@ID", txtUpId.Text);
             SqlDataReader dr = cmd.ExecuteReader();
-            if(dr.Read())
+            
+            if (dr.Read())
             {
-                txtUpName.Text = dr.GetValue(1).ToString();
-                txtUpPhone.Text = dr.GetValue(2).ToString();
-                txtUpEmail.Text = dr.GetValue(3).ToString();
-                txtUpMalayalam.Text = dr.GetValue(4).ToString();
-                txtUpEnglish.Text = dr.GetValue(5).ToString();
-                txtUpHindi.Text = dr.GetValue(6).ToString();
-                txtUpStatus.Text = dr.GetValue(7).ToString();
+                txtUpName.Text = dr["Name"].ToString();
+                txtUpPhone.Text = dr["Phone"].ToString();
+                txtUpEmail.Text = dr["Email"].ToString();
+                txtUpMalayalam.Text = dr["Malayalam"].ToString();
+                txtUpEnglish.Text = dr["English"].ToString();
+                txtUpHindi.Text = dr["Hindi"].ToString();
+                txtUpStatus.Text = dr["Status"].ToString();
 
+               
+                conn.Close();
+                dr.Close();
             }
             else
             {
                 MessageBox.Show("Record not found!!!");
             }
-            cmd.ExecuteNonQuery();
-            conn.Close();
+           
 
         }
 
@@ -58,6 +61,25 @@ namespace StudentCRUDSystem
             this.Hide();
             frmAdminMenu f = new frmAdminMenu();
             f.ShowDialog();
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "UpdateStudent";
+            cmd.Parameters.AddWithValue("@Name", txtUpName.Text);
+            cmd.Parameters.AddWithValue("@Phone", txtUpPhone.Text);
+            cmd.Parameters.AddWithValue("@Email", txtUpEmail.Text);
+            cmd.Parameters.AddWithValue("@Malayalam", txtUpMalayalam.Text);
+            cmd.Parameters.AddWithValue("@English", txtUpEnglish.Text);
+            cmd.Parameters.AddWithValue("@Hindi", txtUpHindi.Text);
+            cmd.Parameters.AddWithValue("@Status", txtUpStatus.Text);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
 
         }
     }

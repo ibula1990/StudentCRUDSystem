@@ -38,6 +38,20 @@ namespace StudentCRUDSystem
                 frmAdminMenu f = new frmAdminMenu();
                 f.ShowDialog();
             }
+            else
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "StudentLogin";
+                cmd.Parameters.AddWithValue("@Email", txtUserName.Text);
+                //cmd.Parameters.AddWithValue("rannum",txtPassword.Text);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                this.Hide();
+                frmStudUpdate_View f = new frmStudUpdate_View();
+                f.ShowDialog();
+            }
         }
     }
 }

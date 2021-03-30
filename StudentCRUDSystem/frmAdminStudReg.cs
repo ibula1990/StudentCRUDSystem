@@ -35,6 +35,7 @@ namespace StudentCRUDSystem
             cmd.Parameters.AddWithValue("@English", txtEnglish.Text);
             cmd.Parameters.AddWithValue("@Hindi", txtHindi.Text);
             cmd.Parameters.AddWithValue("@Status", comboStatus.SelectedItem);
+           
             cmd.ExecuteNonQuery();
             conn.Close();
 
@@ -49,8 +50,7 @@ namespace StudentCRUDSystem
             {
                 MessageBox.Show("Successfully Saved.", ProjectTitle.ProjectName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MessageBox.Show("your Password is:",rannum.ToString());
-                listBox1.Items.Add(txtName.Text);
-
+               
             }
 
             else
@@ -121,7 +121,7 @@ namespace StudentCRUDSystem
                     SqlCommand cmd = conn.CreateCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "DeleteStudent";
-                    cmd.Parameters.AddWithValue("@ID", listBox1.SelectedIndex);
+                   
                     SqlDataReader reader = cmd.ExecuteReader();
                     cmd.ExecuteNonQuery();
                     conn.Close();
@@ -134,6 +134,14 @@ namespace StudentCRUDSystem
                     MessageBox.Show("Please Select Student", ProjectTitle.ProjectName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAdminMenu f = new frmAdminMenu();
+            f.ShowDialog();
+
         }
     }
 }
